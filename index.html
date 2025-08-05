@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniVexa – Anime Streaming</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="inte.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="dark-theme" style="margin: 0; font-family: 'Rajdhani', sans-serif; display: flex;">
+
+  <!-- Sidebar -->
+  <aside style="width: 250px; background: #111827; color: white; padding: 20px 15px; height: 100vh; position: fixed;">
+    <!-- Logo -->
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 30px;">
+      <img src="images/logo.png" alt="AniVexa Logo" style="height: 32px; width: 32px;" />
+      <h1 style="font-size: 24px; font-weight: bold;">AniVexa</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav style="display: flex; flex-direction: column; gap: 10px;">
+      <a href="#" class="nav-link"><i class="fas fa-fire"></i> Trending</a>
+      <a href="#" class="nav-link"><i class="fas fa-tv"></i> Watchlist</a>
+      <a href="#" class="nav-link"><i class="fas fa-layer-group"></i> Categories</a>
+      <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i> New Episodes</a>
+      <a href="#" class="nav-link"><i class="fas fa-heart"></i> Favourites</a>
+    </nav>
+
+    <!-- Genres -->
+    <div style="margin-top: 30px;">
+      <h2 style="font-size: 14px; color: #9ca3af; text-transform: uppercase;">Genres</h2>
+      <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+        <a href="#" class="genre-link">🅐 Action</a>
+        <a href="#" class="genre-link">🅡 Romance</a>
+        <a href="#" class="genre-link">🅓 Drama</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div style="margin-left: 250px; flex: 1; overflow-x: hidden;">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="left-section">
+          <button class="menu-toggle"><span></span><span></span><span></span></button>
+          <img src="images/Anivexa.jpg" alt="Logo" class="logo" />
+          <h1 class="site-name">AniVexa</h1>
+        </div>
+        <form class="search-form">
+          <input type="search" placeholder="Search anime…" required />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="login-section" id="open-login">
+          <span class="login-text">Log in</span>
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Swiper -->
+    <section class="anime-slider">
+      <div class="swiper animeSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/COE.jpeg.jpg" alt="Classroom of the Elite" />
+            <div class="slide-caption">
+              <h2>Classroom of the Elite</h2>
+              <p>At a prestigious school, students face extreme tests of intellect, manipulation, and survival of the smartest.</p>
+              <a href="#" class="watch-btn">Watch Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/solo.png" alt="Solo Leveling" />
+            <div class="slide-caption">
+              <h2>Solo Leveling</h2>
+              <p>A weak hunter gains the power to level up in a brutal world filled with dangerous dungeons.</p>
+              <a href="#" class="watch-btn">Watch Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/AOT.jpg" alt="Attack on Titan" />
+            <div class="slide-caption">
+              <h2>Attack on Titan</h2>
+              <p>Attack on Titan is a dark fantasy anime where humanity battles giant man-eating Titans while uncovering shocking truths about their world.</p>
+              <a href="#" class="watch-btn">Watch Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/WB.jpeg.jpg" alt="Wind Breaker" />
+            <div class="slide-caption">
+              <h2>Wind Breaker</h2>
+              <p>Wind Breaker is a high-octane anime where a group of high school delinquents use street fighting to protect their town and prove their strength.</p>
+              <a href="#" class="watch-btn">Watch Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+      <div class="login-box">
+        <button class="close-btn" id="close-login">&times;</button>
+        <h2>Welcome back!</h2>
+        <form>
+          <label>Email address</label>
+          <input type="email" placeholder="name@email.com" required />
+          <label>Password</label>
+          <input type="password" placeholder="Password" required />
+          <div class="login-options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+          <div class="fake-captcha">✅ Success!</div>
+          <button type="submit" class="login-btn">Login</button>
+          <p class="register-text">Don't have an account? <a href="#">Register</a> or <a href="#">Verify</a></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Canvas BG -->
+    <canvas id="anime-bg"></canvas>
+  </div>
+
+  <!-- Swiper Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- JS Logic -->
+  <script>
+    new Swiper('.animeSwiper', {
+      loop: true,
+      spaceBetween: 20,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+    });
+
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('menu-open');
+    });
+
+    const openBtn = document.getElementById('open-login');
+    const closeBtn = document.getElementById('close-login');
+    const modal = document.getElementById('loginModal');
+
+    openBtn.onclick = () => modal.classList.add('show');
+    closeBtn.onclick = () => modal.classList.remove('show');
+    window.onclick = e => { if (e.target === modal) modal.classList.remove('show'); };
+
+    // Particle BG
+    const c = document.getElementById('anime-bg'), x = c.getContext('2d');
+    function fit() { c.width = innerWidth; c.height = innerHeight; }
+    fit(); addEventListener('resize', fit);
+    const P = Array.from({ length: 60 }, () => ({
+      x: Math.random() * c.width,
+      y: Math.random() * c.height,
+      s: Math.random() * 2 + 1,
+      v: Math.random() * 1 + 0.5
+    }));
+    (function draw() {
+      x.clearRect(0, 0, c.width, c.height);
+      x.fillStyle = 'rgba(255,71,87,.5)';
+      P.forEach(p => {
+        x.beginPath(); x.arc(p.x, p.y, p.s, 0, 6.28); x.fill();
+        p.y += p.v; if (p.y > c.height) p.y = 0;
+      });
+      requestAnimationFrame(draw);
+    })();
+  </script>
+
+  <!-- Extra styles for links -->
+  <style>
+    .nav-link, .genre-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: white;
+      background-color: #1f2937;
+      transition: 0.3s;
+    }
+    .nav-link:hover, .genre-link:hover {
+      background-color: #374151;
+    }
+  </style>
+
+</body>
+</html>
